@@ -115,8 +115,12 @@ body{margin:0;background:#F1EEE8}
 .rbar .rbt b{font:700 17px/1.1 'Inter Tight',sans-serif;letter-spacing:-.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rbar .lbl{color:#5E5A53}
 .rpct{font:600 12px/1 'Inter Tight',sans-serif;color:#5E5A53;white-space:nowrap}
-.rprog{position:relative;z-index:2;height:4px;background:rgba(23,22,21,.08)}
-.rprog i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--c);transition:width .2s linear}
+.rprog{position:relative;z-index:3;height:4px;background:rgba(23,22,21,.1);cursor:pointer;touch-action:none;outline:none;transition:height .15s}
+.rprog::before{content:'';position:absolute;left:0;right:0;top:-10px;bottom:-10px}
+.rprog:hover,.rprog:focus-visible,.rprog.drag{height:8px}
+.rprog i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--c);pointer-events:none}
+.rprog b{position:absolute;top:50%;left:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--c);box-shadow:0 0 0 3px #F1EEE8,0 2px 6px rgba(0,0,0,.3);pointer-events:none;transform:scale(.75);transition:transform .15s}
+.rprog:hover b,.rprog:focus-visible b,.rprog.drag b{transform:scale(1)}
 .rsc{position:relative;z-index:1;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:clamp(20px,5vw,56px) clamp(10px,3vw,24px) 80px}
 .rpage{position:relative;margin:0 auto;max-width:720px;background:#F7F4EE;border-radius:4px;padding:clamp(28px,6vw,72px) clamp(22px,6vw,76px) clamp(40px,6vw,72px);box-shadow:0 0 0 1px rgba(0,0,0,.05),1px 1px 0 #FBF8F1,2px 2px 0 #E9E1D1,3px 3px 0 #FBF8F1,4px 4px 0 #E2D9C6,18px 24px 40px -18px rgba(30,15,5,.35)}
 .rpage .rk{display:inline-block;padding:6px 10px 5px;border-radius:999px;background:var(--c);color:var(--h)}
@@ -141,8 +145,8 @@ body{margin:0;background:#F1EEE8}
 </head>
 <body>
 <div id="app"></div>
-<script src="data.js?v=1795703211"></script>
-<script src="app.js?v=1795703211"></script>
+<script src="data.js?v=1795703577"></script>
+<script src="app.js?v=1795703577"></script>
 <script>
 (function(){function fit(){var W=innerWidth,H=innerHeight,s=Math.min(H/900,W/(W<H?800:1000),1.6),a=document.getElementById("app");a.style.width=(W/s)+"px";a.style.top=Math.max(0,(H-900*s)/2)+"px";a.style.transform="scale("+s+")";}addEventListener("resize",fit);fit();})();
 </script>
