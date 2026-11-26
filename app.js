@@ -157,7 +157,7 @@
   `]):null,`
   `,z(a(t,"player"))?e(B,null,[`
     `,e("div",{class:"player",role:"dialog","aria-modal":"true","aria-label":o(a(t,"player.title"))},[`
-      `,e("div",{class:"pbox"},[e("iframe",{src:a(t,"player.src"),title:a(t,"player.title"),allow:"autoplay; fullscreen; picture-in-picture; encrypted-media",allowfullscreen:"true"},[]),e("button",{class:"btng",onclick:a(t,"closePlayer"),style:"color: #F7F4EE"},[o(a(t,"T.closePlayer"))])]),`
+      `,e("div",{class:"pbox"},[e("iframe",{src:a(t,"player.src"),title:a(t,"player.title"),allow:"autoplay; fullscreen; picture-in-picture; encrypted-media",allowfullscreen:"true",referrerpolicy:"strict-origin-when-cross-origin"},[]),e("button",{class:"btng",onclick:a(t,"closePlayer"),style:"color: #F7F4EE"},[o(a(t,"T.closePlayer"))])]),`
     `]),`
   `]):null,`
   `,z(a(t,"unknown"))?e(B,null,[`
