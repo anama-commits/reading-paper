@@ -82,8 +82,6 @@ body{margin:0;background:#F1EEE8}
 .ctl{align-items:center}
 .peek{height:44px;padding:0 6px;border:0;background:none;cursor:pointer;font:500 14px/1 'Inter Tight',sans-serif;letter-spacing:-.02em;color:#5E5A53;text-decoration:underline;text-underline-offset:3px}
 .peek:hover{color:#171615}
-.ctl button{white-space:nowrap}
-.ctl{width:max-content;max-width:calc(100vw - 32px)}
 .fx{position:absolute;inset:0;z-index:60;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:5vw;align-items:center;padding:80px 7vw 60px;color:#F7F4EE}
 .veil{position:absolute;inset:0;background:rgba(23,22,21,.84)}
 .obj{position:relative;justify-self:end;display:flex;align-items:center;justify-content:center}
@@ -96,10 +94,14 @@ body{margin:0;background:#F1EEE8}
 .note{font:400 13px/1.4 Inter,sans-serif;color:#CFC8BC}
 @media (max-width:900px){.scene{transform:scale(.5)!important;transform-origin:50% 0}.fx{grid-template-columns:minmax(0,1fr);overflow:auto}.obj{justify-self:center}}
 </style>
+<style>html,body{margin:0;height:100%;background:#F1EEE8;overflow:hidden}#app{position:absolute;left:0;top:0;height:900px;transform-origin:0 0}</style>
 </head>
 <body>
 <div id="app"></div>
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script>
+(function(){function fit(){var W=innerWidth,H=innerHeight,s=Math.min(H/900,W/(W<H?800:1000),1.6),a=document.getElementById("app");a.style.width=(W/s)+"px";a.style.top=Math.max(0,(H-900*s)/2)+"px";a.style.transform="scale("+s+")";}addEventListener("resize",fit);fit();})();
+</script>
 </body>
 </html>
